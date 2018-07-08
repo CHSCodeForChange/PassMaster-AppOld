@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import './passes.dart';
 
 class Home extends StatelessWidget {
 
@@ -13,7 +14,7 @@ class Home extends StatelessWidget {
         children: <Widget>[
           new Flexible(
             child: new Card(
-              margin: const EdgeInsets.only(top: 60.0, bottom: 0.0, left: 30.0, right: 30.0),
+              margin: const EdgeInsets.only(top: 60.0, bottom: 10.0, left: 30.0, right: 30.0),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
               child: new Container(
                 margin:const EdgeInsets.all(20.0),
@@ -56,7 +57,6 @@ class Home extends StatelessWidget {
                       padding: new EdgeInsets.only(top: 5.0, bottom: 5.0),
                       child: new Text(
                         'Left: July 5, 9:27 p.m.',
-                        textAlign: TextAlign.left,
                         style: TextStyle(fontSize: 15.0)
 
                       ),
@@ -65,7 +65,6 @@ class Home extends StatelessWidget {
                       padding: new EdgeInsets.only(top: 5.0, bottom: 5.0),
                       child: new Text(
                         'Arrived: None',
-                        textAlign: TextAlign.left,
                         style: TextStyle(fontSize: 15.0)
 
                       ),
@@ -74,7 +73,6 @@ class Home extends StatelessWidget {
                       padding: new EdgeInsets.only(top: 5.0, bottom: 5.0),
                       child: new Text(
                         'Origin Teacher: Mr. Harper',
-                        textAlign: TextAlign.left,
                         style: TextStyle(fontSize: 15.0)
 
                       ),
@@ -87,14 +85,52 @@ class Home extends StatelessWidget {
 
           new Container(
             margin: const EdgeInsets.only(bottom: 20.0, top: 20.0),
-            child: RaisedButton (
-              onPressed: openAddPassMenu,              
-              color: Colors.white,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
-              child: Text(
-                '+', 
-                style: new TextStyle(color: Colors.orangeAccent, fontWeight: FontWeight.bold, fontSize: 40.0),
-              ),
+            child: new Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new Container(
+                  margin: EdgeInsets.only(left:5.0, right: 5.0),
+                  child: RaisedButton (
+                    onPressed: openAddPassMenu,              
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
+                    child: new Icon(
+                      const IconData(0xe8b8, fontFamily: 'MaterialIcons'),
+                      color: Colors.orangeAccent,
+                    )
+                  ), 
+                ),
+                new Container(
+                  margin: EdgeInsets.only(left:5.0, right: 5.0),
+                  child: RaisedButton (
+                    onPressed: openAddPassMenu,              
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
+                    child: new Icon(
+                      const IconData(0xe147, fontFamily: 'MaterialIcons'),
+                      color: Colors.orangeAccent,
+                    )
+                  ), 
+                ),
+                new Container(
+                  margin: EdgeInsets.only(left:5.0, right: 5.0),
+                  child: RaisedButton (
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Passes()),
+                      );
+                    },              
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
+                    child: new Icon(
+                      const IconData(0xe8ed, fontFamily: 'MaterialIcons'),
+                      color: Colors.orangeAccent,
+                    )
+                  ), 
+                ),
+                
+              ],
             )
           )
         ],
