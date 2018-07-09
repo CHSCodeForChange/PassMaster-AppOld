@@ -13,17 +13,25 @@ class Passes extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(top: 30.0, bottom: 10.0),
             alignment: Alignment.centerLeft,
-            child: new RaisedButton(
-              child: Icon(
-                const IconData(0xe5c4, fontFamily: 'MaterialIcons', matchTextDirection: true),
-                color: Colors.orangeAccent,
-              ),
-              shape: CircleBorder(),
-              color: Colors.white,
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
+            child: new Row(
+              children: <Widget>[
+                new RaisedButton(
+                  child: Icon(
+                    const IconData(0xe5c4, fontFamily: 'MaterialIcons', matchTextDirection: true),
+                    color: Colors.orangeAccent,
+                  ),
+                  shape: CircleBorder(),
+                  color: Colors.white,
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                new Text(
+                  'Passes',
+                  style: TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.bold),
+                )
+              ],
+            )
           ),
           new Expanded(
             child: new ListView.builder(

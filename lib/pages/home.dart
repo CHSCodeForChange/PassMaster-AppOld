@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import './passes.dart';
+import './create.dart';
+import './settings.dart';
 
 class Home extends StatelessWidget {
 
@@ -91,7 +93,12 @@ class Home extends StatelessWidget {
                 new Container(
                   margin: EdgeInsets.only(left:5.0, right: 5.0),
                   child: RaisedButton (
-                    onPressed: openAddPassMenu,              
+                    onPressed: () {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => Settings())
+                      );
+                    },              
                     color: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                     child: new Icon(
@@ -103,7 +110,12 @@ class Home extends StatelessWidget {
                 new Container(
                   margin: EdgeInsets.only(left:5.0, right: 5.0),
                   child: RaisedButton (
-                    onPressed: openAddPassMenu,              
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CreatePass()),
+                      );
+                    },              
                     color: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                     child: new Icon(
