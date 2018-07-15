@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import './home.dart';
+import 'package:intl/intl.dart';
+import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
+import 'package:datetime_picker_formfield/time_picker_formfield.dart';
 
 class CreatePass extends StatelessWidget {
-
+final dateFormat = DateFormat("EEEE, MMMM d, yyyy 'at' h:mma");
   @override
   Widget build(BuildContext context) {
-    
+
     return new Theme(
       data: ThemeData(primaryColor: Colors.orangeAccent),
       child: new Material(
@@ -52,27 +55,43 @@ class CreatePass extends StatelessWidget {
                               hintText: 'Destination',
                               labelText: 'Enter your destination'
                             )
-                          ), 
+                          ),
                           new TextFormField(
                             decoration: new InputDecoration(
                               hintText: 'Origin Teacher',
                               labelText: 'Enter your origin teacher'
                             )
-                          ), 
+                          ),
                           new TextFormField(
                             maxLines: 10,
                             decoration: new InputDecoration(
                               hintText: 'Reason',
                               labelText: 'Enter your reason for pass'
                             )
-                          )
+                          ),
+                          new DateTimePickerFormField(
+                            format: dateFormat,
+                            enabled: true,
+                            decoration: new InputDecoration(
+                              hintText: 'Start Time',
+                              labelText: 'Enter a start time'
+                            )
+                          ),
+                          new DateTimePickerFormField(
+                            format: dateFormat,
+                            enabled: true,
+                            decoration: new InputDecoration(
+                              hintText: 'End Time',
+                              labelText: 'Enter an end time'
+                            )
+                          ),
                         ],
                       ),
                     )
                   )
                 )
-              ) 
-            ), 
+              )
+            ),
             new Container(
               margin: EdgeInsets.only(bottom: 20.0, top: 20.0),
               child: RaisedButton (
@@ -82,12 +101,12 @@ class CreatePass extends StatelessWidget {
                   const IconData(0xe5c8, fontFamily: 'MaterialIcons', matchTextDirection: true),
                   color: Colors.orangeAccent,
                 )
-              ), 
+              ),
             )
-            
+
           ],
         )
-        
+
       )
     );
   }
