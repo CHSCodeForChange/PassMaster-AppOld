@@ -49,42 +49,66 @@ final dateFormat = DateFormat("EEEE, MMMM d, yyyy 'at' h:mma");
                     margin: EdgeInsets.all(10.0),
                     child: new Form(
                       child: new Column(
+
                         children: <Widget>[
-                          new TextFormField(
-                            decoration: new InputDecoration(
-                              hintText: 'Destination',
-                              labelText: 'Enter your destination'
-                            )
+                          new Container(
+                            margin: EdgeInsets.all(5.0),
+                            child: new TextFormField(
+                              decoration: new InputDecoration(
+                                hintText: 'Destination',
+                                border: OutlineInputBorder(borderRadius: BorderRadius.circular(100.0)),
+                              
+                              )
+                            ),
+                          ), 
+                          new Container(
+                            margin: EdgeInsets.all(5.0),
+                            child: new TextFormField(
+                              decoration: new InputDecoration(
+                                hintText: 'Origin Teacher',
+                                border: OutlineInputBorder(borderRadius: BorderRadius.circular(100.0)),
+                              
+                              )
+                            ),
+                          ), 
+                          new Container(
+                            margin: EdgeInsets.all(5.0),
+                            child: new TextFormField(
+                              maxLines: 7,
+                              decoration: new InputDecoration(
+                                hintText: 'Reason',
+                                // filled: true,
+                                // fillColor: Color.fromRGBO(0, 0, 0, .1),
+                                border: OutlineInputBorder(borderRadius: BorderRadius.circular(25.0)),
+                              
+                              )
+                            ),
                           ),
-                          new TextFormField(
-                            decoration: new InputDecoration(
-                              hintText: 'Origin Teacher',
-                              labelText: 'Enter your origin teacher'
-                            )
+                         
+                          new Container(
+                            margin: EdgeInsets.all(5.0),
+                            child: new DateTimePickerFormField(
+                              format: dateFormat,
+                              enabled: true,
+                              decoration: new InputDecoration(
+                                hintText: 'Start Time',
+                                border: OutlineInputBorder(borderRadius: BorderRadius.circular(100.0)),
+                              
+                              )
+                            ),
                           ),
-                          new TextFormField(
-                            maxLines: 10,
-                            decoration: new InputDecoration(
-                              hintText: 'Reason',
-                              labelText: 'Enter your reason for pass'
+                          new Container(
+                            margin: EdgeInsets.all(5.0),
+                            child: new DateTimePickerFormField(
+                              format: dateFormat,
+                              enabled: true,
+                              decoration: new InputDecoration(
+                                hintText: 'End Time',
+                                border: OutlineInputBorder(borderRadius: BorderRadius.circular(100.0)),
+                              
+                              )
                             )
-                          ),
-                          new DateTimePickerFormField(
-                            format: dateFormat,
-                            enabled: true,
-                            decoration: new InputDecoration(
-                              hintText: 'Start Time',
-                              labelText: 'Enter a start time'
-                            )
-                          ),
-                          new DateTimePickerFormField(
-                            format: dateFormat,
-                            enabled: true,
-                            decoration: new InputDecoration(
-                              hintText: 'End Time',
-                              labelText: 'Enter an end time'
-                            )
-                          ),
+                          )
                         ],
                       ),
                     )
