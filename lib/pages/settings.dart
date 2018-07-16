@@ -31,33 +31,35 @@ class Settings extends StatelessWidget {
             new Expanded(
               flex: 1, 
               child: Card(
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
                 child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    new Text('Teachers'),
+                    new Text(
+                      'Teachers',
+                      style: TextStyle(fontSize: 40.0),
+                      textAlign: TextAlign.center,
+                      ),
                   ],
                 )
               )
             ), 
             new Expanded(
-              flex: 1,
+              flex: 1, 
               child: Card(
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
                 child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    new Text('Account'),
+                    new Text(
+                      'Account',
+                      style: TextStyle(fontSize: 40.0),
+                      textAlign: TextAlign.center,
+                      ),
                   ],
                 )
               )
-            ), 
-            new Expanded(
-              flex: 1,
-              child: Card(
-                child: new Row(
-                  children: <Widget>[
-                    new Text('Teachers'),
-                  ],
-                )
-              )
-            )
+            ),
           ]
         ),
       )

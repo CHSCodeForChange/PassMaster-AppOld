@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import './home.dart';
 import 'package:intl/intl.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:datetime_picker_formfield/time_picker_formfield.dart';
 
-class CreatePass extends StatelessWidget {
-final dateFormat = DateFormat("EEEE, MMMM d, yyyy 'at' h:mma");
+class CreateSRTPass extends StatelessWidget {
+final dateFormat = DateFormat("EEEE, MMMM d, yyyy");
   @override
   Widget build(BuildContext context) {
 
@@ -33,7 +32,7 @@ final dateFormat = DateFormat("EEEE, MMMM d, yyyy 'at' h:mma");
                     },
                   ),
                   new Text(
-                    'Create Pass',
+                    'SRT Pass',
                     style: TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.bold),
                   )
                 ],
@@ -55,7 +54,7 @@ final dateFormat = DateFormat("EEEE, MMMM d, yyyy 'at' h:mma");
                             margin: EdgeInsets.all(5.0),
                             child: new TextFormField(
                               decoration: new InputDecoration(
-                                hintText: 'Destination',
+                                hintText: 'Destination Teacher',
                                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(100.0)),
                               
                               )
@@ -65,7 +64,7 @@ final dateFormat = DateFormat("EEEE, MMMM d, yyyy 'at' h:mma");
                             margin: EdgeInsets.all(5.0),
                             child: new TextFormField(
                               decoration: new InputDecoration(
-                                hintText: 'Origin Teacher',
+                                hintText: 'SRT Teacher',
                                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(100.0)),
                               
                               )
@@ -91,23 +90,51 @@ final dateFormat = DateFormat("EEEE, MMMM d, yyyy 'at' h:mma");
                               format: dateFormat,
                               enabled: true,
                               decoration: new InputDecoration(
-                                hintText: 'Start Time',
+                                hintText: 'Day',
                                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(100.0)),
                               
                               )
                             ),
                           ),
                           new Container(
-                            margin: EdgeInsets.all(5.0),
-                            child: new DateTimePickerFormField(
-                              format: dateFormat,
-                              enabled: true,
-                              decoration: new InputDecoration(
-                                hintText: 'End Time',
-                                border: OutlineInputBorder(borderRadius: BorderRadius.circular(100.0)),
-                              
-                              )
-                            )
+                            margin: EdgeInsets.only(top:15.0),
+                            child: new Row(
+                            children: <Widget>[
+                              new Expanded(
+                                child: new Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    new Container(
+                                      child: new Text('Session 1')
+                                    ),
+                                    new Container(
+                                      child: new Checkbox(
+                                        value: false,
+                                      )
+                                    )
+                                    
+                                  ],
+                                )
+                              ),
+                             new Expanded(
+                                child: new Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    new Container(
+                                      child: new Text('Session 2')
+                                    ),
+                                    new Container(
+                                      child: new Checkbox(
+                                        value: false,
+                                      )
+                                    )
+                                    
+                                  ],
+                                )
+                              ),
+                            
+                            ],
+                          )
                           )
                         ],
                       ),

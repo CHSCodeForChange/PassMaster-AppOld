@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import './passes.dart';
-import './create.dart';
+import './create_pass/select_type.dart';
 import './settings.dart';
 
 class Home extends StatelessWidget {
@@ -113,7 +113,7 @@ class Home extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => CreatePass()),
+                        MaterialPageRoute(builder: (context) => SelectType()),
                       );
                     },              
                     color: Colors.white,
