@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
-import 'package:datetime_picker_formfield/time_picker_formfield.dart';
+import './search_teacher.dart';
 
 class CreateTeacherPass extends StatelessWidget {
 final dateFormat = DateFormat("EEEE, MMMM d, yyyy 'at' h:mma");
@@ -62,13 +62,22 @@ final dateFormat = DateFormat("EEEE, MMMM d, yyyy 'at' h:mma");
                           ), 
                           new Container(
                             margin: EdgeInsets.all(5.0),
-                            child: new TextFormField(
-                              decoration: new InputDecoration(
-                                hintText: 'Origin Teacher',
-                                border: OutlineInputBorder(borderRadius: BorderRadius.circular(100.0)),
+                            child: new RaisedButton(
+                              child: new Text("Origin Teacher"),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => SearchTeacher()),
+                                );
+                              },
+                            )
+                            // child: new TextFormField(
+                            //   decoration: new InputDecoration(
+                            //     hintText: 'Origin Teacher',
+                            //     border: OutlineInputBorder(borderRadius: BorderRadius.circular(100.0)),
                               
-                              )
-                            ),
+                            //   )
+                            // ),
                           ), 
                           new Container(
                             margin: EdgeInsets.all(5.0),
