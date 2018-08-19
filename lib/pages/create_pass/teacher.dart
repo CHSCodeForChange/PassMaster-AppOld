@@ -63,7 +63,18 @@ final dateFormat = DateFormat("EEEE, MMMM d, yyyy 'at' h:mma");
                           new Container(
                             margin: EdgeInsets.all(5.0),
                             child: new RaisedButton(
-                              child: new Text("Origin Teacher"),
+                              elevation: 0.0,
+                              child: new Container(
+                                width: 8000.0,
+                                height: 60.0,
+                                alignment: Alignment(-1.0, 0.0),
+                                child: new Text(
+                                  "Origin Teacher",
+                                  style: TextStyle(color: Colors.grey, fontSize: 16.0),
+                                )
+                              ),
+                              shape: StadiumBorder(side: BorderSide(color: Colors.black)),
+                              color: Colors.white,
                               onPressed: () {
                                 Navigator.push(
                                   context,
