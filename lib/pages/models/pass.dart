@@ -31,10 +31,10 @@ class PassModel {
 
   PassModel.fromJson(Map<String, dynamic> json)
       : approved = json['approved'],
-        startTimeRequested = json['startTimeRequested'] == null ? ' ' : formatDateTime(json['startTimeRequested']),
-        endTimeRequested = json['endTimeRequested'] == null ? ' ' : formatDateTime(json['endTimeRequested']),
-        timeLeftOrigin = json['timeLeftOrigin'] == null ? ' ' : formatDateTime(json['timeLeftOrigin']),
-        timeArrivedDestination = json['timeArrivedDestination'] == null ? ' ' : formatDateTime(json['timeArrivedDestination']),
+        startTimeRequested = json['startTimeRequested'] == null ? ' ' : json['startTimeRequested'],
+        endTimeRequested = json['endTimeRequested'] == null ? ' ' : json['endTimeRequested'],
+        timeLeftOrigin = json['timeLeftOrigin'] == null ? ' ' : json['timeLeftOrigin'],
+        timeArrivedDestination = json['timeArrivedDestination'] == null ? ' ' : json['timeArrivedDestination'],
         type = json['type'],
         student = json['student'],
         originTeacher = json['originTeacher'],

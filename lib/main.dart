@@ -5,6 +5,6 @@ import './pages/auth/signup.dart';
 
 void main() {
   runApp(new MaterialApp(
-    home: new Signup(),
+    home: new Home(),
   ));
 }
