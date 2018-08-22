@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
-import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
-import 'package:datetime_picker_formfield/time_picker_formfield.dart';
+
 import './destination.dart';
 import './teacher.dart';
 import './srt.dart';
+import './fragments/selection_card.dart';
 
 class SelectType extends StatelessWidget {
 final dateFormat = DateFormat("EEEE, MMMM d, yyyy 'at' h:mma");
@@ -42,80 +42,19 @@ final dateFormat = DateFormat("EEEE, MMMM d, yyyy 'at' h:mma");
               )
             ),
 
-            
-            new Expanded(
-              child: new GestureDetector(
-                onTap: () {
-                   Navigator.push(
-                      context, 
-                      MaterialPageRoute(builder: (context) => CreateDestinationPass())
-                    );
-                },
-                child: new Container(
-                  margin: const EdgeInsets.only(left:20.0, right: 20.0, bottom: 5.0, top: 5.0),
-                  child: new Card(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-                    child: new Container(
-                      alignment: Alignment.center,
-                      child: new Text(
-                        'Destination Pass',
-                        style: TextStyle(fontSize: 40.0),
-                        textAlign: TextAlign.center,
-                      ),
-                    )
-                  )
-                )
-              )
+            new Row(
+              children: <Widget>[
+                new SelectionCard(const IconData(0xe0c8, fontFamily: 'MaterialIcons'), 'Location Pass', MaterialPageRoute(builder: (context) => CreateDestinationPass())),
+                new SelectionCard(const IconData(0xe7fd, fontFamily: 'MaterialIcons'), 'Teacher Pass', MaterialPageRoute(builder: (context) => CreateTeacherPass())),
+              ],
             ),
-            new Expanded(
-              child: new GestureDetector(
-                onTap: () {
-                   Navigator.push(
-                      context, 
-                      MaterialPageRoute(builder: (context) => CreateTeacherPass())
-                    );
-                },
-                child: new Container(
-                  margin: const EdgeInsets.only(left:20.0, right: 20.0, bottom: 5.0, top: 5.0),
-                  child: new Card(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-                    child: new Container(
-                      alignment: Alignment.center,
-                      child: new Text(
-                        'Teacher Pass',
-                        style: TextStyle(fontSize: 40.0),
-                        textAlign: TextAlign.center,
-                      ),
-                    )
-                  )
-                )
-              )
-            ),
-            new Expanded(
-              child: new GestureDetector(
-                onTap: () {
-                   Navigator.push(
-                      context, 
-                      MaterialPageRoute(builder: (context) => CreateSRTPass())
-                    );
-                },
-                child: new Container(
-                  margin: const EdgeInsets.only(left:20.0, right: 20.0, bottom: 5.0, top: 5.0),
-                  child: new Card(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-                    child: new Container(
-                      alignment: Alignment.center,
-                      child: new Text(
-                        'SRT Pass',
-                        style: TextStyle(fontSize: 40.0),
-                        textAlign: TextAlign.center,
-                      ),
-                    )
-                  )
-                )
-              )
-            ),
-            
+            new Row(
+              children: <Widget>[
+                new SelectionCard(const IconData(0xe85d, fontFamily: 'MaterialIcons', matchTextDirection: true), 'SRT Pass', MaterialPageRoute(builder: (context) => CreateSRTPass())),
+                new SelectionCard(const IconData(0xe924, fontFamily: 'MaterialIcons', matchTextDirection: true), 'Tardy Pass', null),
+              ],
+            )
+
 
           ],
         )
